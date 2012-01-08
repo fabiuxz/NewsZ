@@ -52,4 +52,10 @@ $wgNewsZthumbsize='120x96px';
 //To avoid search articles in first level subcategories add this line:
 $wgNewszNotSubCategory = true;
 //Date format: default=english(MDY); DMY=latin; YMD=scientific
-$wgNewszFormatDate = YMD;
+$wgNewszFormatDate = 'YMD';
+
+Note
+----
+To speed up the news refresh, you can invalidate cache in Localsettings.php:
+//$wgCacheEpoch = max( $wgCacheEpoch, gmdate( 'YmdHis', @filemtime( __FILE__ ) ) );
+$wgCacheEpoch = gmdate( 'YmdHis' );
